@@ -7,23 +7,24 @@
 //
 
 import UIKit
-
+import Firebase
 class AuthVC: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
     }
     
-
-
-    @IBAction func loginBtnWasPressed(_ sender: Any) {
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        //Ha be vagyunk lépve akkor dismiss
+        if Auth.auth().currentUser != nil {
+            dismiss(animated: true, completion: nil)
+        }
     }
     
+    @IBAction func signInBtnWasPressed(_ sender: Any) {
+        let signinVC = storyboard?.instantiateViewController(withIdentifier: CO_SB_SIGNINVC)
+        present(signinVC!, animated: true, completion: nil)
+    }
 }

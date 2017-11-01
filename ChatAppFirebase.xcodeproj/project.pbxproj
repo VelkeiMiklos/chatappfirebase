@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		21C48752A8D40F8C973F7350 /* Pods_ChatAppFirebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA69B0C9DF040520B4C90A4A /* Pods_ChatAppFirebase.framework */; };
+		F5C45C641FAA05C900D6A907 /* SigninVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C45C631FAA05C900D6A907 /* SigninVC.swift */; };
 		F5D25E3C1FA64BA60003F0CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D25E3B1FA64BA60003F0CA /* AppDelegate.swift */; };
 		F5D25E3E1FA64BA60003F0CA /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D25E3D1FA64BA60003F0CA /* FeedVC.swift */; };
 		F5D25E401FA64BA60003F0CA /* GroupsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D25E3F1FA64BA60003F0CA /* GroupsVC.swift */; };
@@ -16,7 +17,6 @@
 		F5D25E481FA64BA60003F0CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5D25E461FA64BA60003F0CA /* LaunchScreen.storyboard */; };
 		F5D978F91FA7BF510066A43B /* GroupFeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D978F81FA7BF510066A43B /* GroupFeedVC.swift */; };
 		F5D978FB1FA7BF820066A43B /* AuthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D978FA1FA7BF820066A43B /* AuthVC.swift */; };
-		F5D978FD1FA7BF9B0066A43B /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D978FC1FA7BF9B0066A43B /* LoginVC.swift */; };
 		F5D978FF1FA7C0BA0066A43B /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D978FE1FA7C0BA0066A43B /* FeedCell.swift */; };
 		F5D979011FA7C15D0066A43B /* GroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D979001FA7C15D0066A43B /* GroupCell.swift */; };
 		F5D979031FA7C3BC0066A43B /* CreateGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D979021FA7C3BC0066A43B /* CreateGroupCell.swift */; };
@@ -24,10 +24,15 @@
 		F5D9B9131FA6599800F633CB /* CreatePostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D9B9121FA6599800F633CB /* CreatePostVC.swift */; };
 		F5D9B9151FA65D3B00F633CB /* CreateGroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D9B9141FA65D3B00F633CB /* CreateGroupVC.swift */; };
 		F5F222171FA9C53C00EC7F73 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F5F222161FA9C53800EC7F73 /* GoogleService-Info.plist */; };
+		F5F222191FA9CA2800EC7F73 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F222181FA9CA2800EC7F73 /* Constants.swift */; };
+		F5F2221B1FA9CA5500EC7F73 /* DataServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F2221A1FA9CA5500EC7F73 /* DataServices.swift */; };
+		F5F2221D1FA9CA6200EC7F73 /* AuthServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F2221C1FA9CA6200EC7F73 /* AuthServices.swift */; };
+		F5F2221F1FA9D0BA00EC7F73 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F2221E1FA9D0BA00EC7F73 /* CustomTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D2DE78933837274F42BFF881 /* Pods-ChatAppFirebase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatAppFirebase.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChatAppFirebase/Pods-ChatAppFirebase.release.xcconfig"; sourceTree = "<group>"; };
+		F5C45C631FAA05C900D6A907 /* SigninVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninVC.swift; sourceTree = "<group>"; };
 		F5D25E381FA64BA60003F0CA /* ChatAppFirebase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatAppFirebase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5D25E3B1FA64BA60003F0CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F5D25E3D1FA64BA60003F0CA /* FeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
@@ -38,7 +43,6 @@
 		F5D25E491FA64BA60003F0CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F5D978F81FA7BF510066A43B /* GroupFeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupFeedVC.swift; sourceTree = "<group>"; };
 		F5D978FA1FA7BF820066A43B /* AuthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthVC.swift; sourceTree = "<group>"; };
-		F5D978FC1FA7BF9B0066A43B /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		F5D978FE1FA7C0BA0066A43B /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		F5D979001FA7C15D0066A43B /* GroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCell.swift; sourceTree = "<group>"; };
 		F5D979021FA7C3BC0066A43B /* CreateGroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGroupCell.swift; sourceTree = "<group>"; };
@@ -46,6 +50,10 @@
 		F5D9B9121FA6599800F633CB /* CreatePostVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostVC.swift; sourceTree = "<group>"; };
 		F5D9B9141FA65D3B00F633CB /* CreateGroupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGroupVC.swift; sourceTree = "<group>"; };
 		F5F222161FA9C53800EC7F73 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F5F222181FA9CA2800EC7F73 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		F5F2221A1FA9CA5500EC7F73 /* DataServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataServices.swift; sourceTree = "<group>"; };
+		F5F2221C1FA9CA6200EC7F73 /* AuthServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServices.swift; sourceTree = "<group>"; };
+		F5F2221E1FA9D0BA00EC7F73 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		FA69B0C9DF040520B4C90A4A /* Pods_ChatAppFirebase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChatAppFirebase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFF78C8200C6D7E71616EB46 /* Pods-ChatAppFirebase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatAppFirebase.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChatAppFirebase/Pods-ChatAppFirebase.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -126,7 +134,7 @@
 				F5D9B9141FA65D3B00F633CB /* CreateGroupVC.swift */,
 				F5D978F81FA7BF510066A43B /* GroupFeedVC.swift */,
 				F5D978FA1FA7BF820066A43B /* AuthVC.swift */,
-				F5D978FC1FA7BF9B0066A43B /* LoginVC.swift */,
+				F5C45C631FAA05C900D6A907 /* SigninVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -137,6 +145,7 @@
 				F5D978FE1FA7C0BA0066A43B /* FeedCell.swift */,
 				F5D979001FA7C15D0066A43B /* GroupCell.swift */,
 				F5D979021FA7C3BC0066A43B /* CreateGroupCell.swift */,
+				F5F2221E1FA9D0BA00EC7F73 /* CustomTextField.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -158,6 +167,8 @@
 		F5D9B90D1FA6515D00F633CB /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				F5F2221A1FA9CA5500EC7F73 /* DataServices.swift */,
+				F5F2221C1FA9CA6200EC7F73 /* AuthServices.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -165,6 +176,7 @@
 		F5D9B90E1FA6516500F633CB /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				F5F222181FA9CA2800EC7F73 /* Constants.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -293,15 +305,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5F2221D1FA9CA6200EC7F73 /* AuthServices.swift in Sources */,
 				F5D9B9131FA6599800F633CB /* CreatePostVC.swift in Sources */,
+				F5F2221B1FA9CA5500EC7F73 /* DataServices.swift in Sources */,
 				F5D979031FA7C3BC0066A43B /* CreateGroupCell.swift in Sources */,
+				F5F2221F1FA9D0BA00EC7F73 /* CustomTextField.swift in Sources */,
 				F5D978FF1FA7C0BA0066A43B /* FeedCell.swift in Sources */,
 				F5D979011FA7C15D0066A43B /* GroupCell.swift in Sources */,
 				F5D978F91FA7BF510066A43B /* GroupFeedVC.swift in Sources */,
 				F5D978FB1FA7BF820066A43B /* AuthVC.swift in Sources */,
 				F5D9B9111FA656BB00F633CB /* MeVC.swift in Sources */,
+				F5C45C641FAA05C900D6A907 /* SigninVC.swift in Sources */,
+				F5F222191FA9CA2800EC7F73 /* Constants.swift in Sources */,
 				F5D9B9151FA65D3B00F633CB /* CreateGroupVC.swift in Sources */,
-				F5D978FD1FA7BF9B0066A43B /* LoginVC.swift in Sources */,
 				F5D25E401FA64BA60003F0CA /* GroupsVC.swift in Sources */,
 				F5D25E3C1FA64BA60003F0CA /* AppDelegate.swift in Sources */,
 				F5D25E3E1FA64BA60003F0CA /* FeedVC.swift in Sources */,

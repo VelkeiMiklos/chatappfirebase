@@ -14,6 +14,9 @@
             <string>Menlo-Bold</string>
             <string>Menlo-Regular</string>
         </array>
+        <array key="Mishafi.ttf">
+            <string>DiwanMishafi</string>
+        </array>
     </customFonts>
     <scenes>
         <!--Feed-->
@@ -790,7 +793,7 @@
         <!--AuthVC-->
         <scene sceneID="IaK-W6-xH8">
             <objects>
-                <viewController id="7K5-gs-O83" customClass="AuthVC" customModule="ChatAppFirebase" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AuthSB" id="7K5-gs-O83" customClass="AuthVC" customModule="ChatAppFirebase" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iTU-EE-j0E">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -808,34 +811,40 @@
                                         <rect key="frame" x="20" y="215" width="335" height="216"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_chat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jT6-dp-zw8">
-                                                <rect key="frame" x="129" y="20" width="76" height="30"/>
+                                                <rect key="frame" x="129.5" y="20" width="75.5" height="29.5"/>
                                                 <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="25"/>
                                                 <color key="textColor" red="0.56078431370000004" green="0.81176470590000005" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Cc-bv-WiH">
-                                                <rect key="frame" x="40" y="78" width="255" height="60"/>
-                                                <color key="backgroundColor" red="0.56078431370000004" green="0.81176470590000005" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="255" id="VX8-cB-bmK"/>
-                                                    <constraint firstAttribute="height" constant="60" id="d2l-Cy-Yct"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="17"/>
-                                                <state key="normal" title="LOGIN WITH EMAIL">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="loginBtnWasPressed:" destination="7K5-gs-O83" eventType="touchUpInside" id="iUt-bE-wWl"/>
-                                                </connections>
-                                            </button>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Omi-M7-mwO">
+                                                <rect key="frame" x="40" y="83" width="255" height="50"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Cc-bv-WiH">
+                                                        <rect key="frame" x="0.0" y="0.0" width="255" height="50"/>
+                                                        <color key="backgroundColor" red="0.56078431370000004" green="0.81176470590000005" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="Ig8-aT-0td"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="17"/>
+                                                        <state key="normal" title="LOGIN/SIGNIN WITH EMAIL">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="signInBtnWasPressed:" destination="7K5-gs-O83" eventType="touchUpInside" id="gJD-c0-fM3"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.25195008516311646" green="0.26964020729064941" blue="0.31568059325218201" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstItem="0Cc-bv-WiH" firstAttribute="centerX" secondItem="W8r-k5-CqM" secondAttribute="centerX" id="FH6-cl-VVt"/>
+                                            <constraint firstItem="Omi-M7-mwO" firstAttribute="leading" secondItem="W8r-k5-CqM" secondAttribute="leading" constant="40" id="ECr-n8-Wbk"/>
+                                            <constraint firstItem="Omi-M7-mwO" firstAttribute="centerX" secondItem="W8r-k5-CqM" secondAttribute="centerX" id="EjT-dh-RPJ"/>
                                             <constraint firstItem="jT6-dp-zw8" firstAttribute="top" secondItem="W8r-k5-CqM" secondAttribute="top" constant="20" id="Gf0-yK-CWs"/>
                                             <constraint firstItem="jT6-dp-zw8" firstAttribute="centerX" secondItem="W8r-k5-CqM" secondAttribute="centerX" id="KMh-nV-jKG"/>
+                                            <constraint firstItem="Omi-M7-mwO" firstAttribute="centerY" secondItem="W8r-k5-CqM" secondAttribute="centerY" id="Nji-HT-t7j"/>
+                                            <constraint firstAttribute="trailing" secondItem="Omi-M7-mwO" secondAttribute="trailing" constant="40" id="cd7-Va-JBo"/>
                                             <constraint firstAttribute="height" constant="216" id="deL-vy-QAE"/>
-                                            <constraint firstItem="0Cc-bv-WiH" firstAttribute="centerY" secondItem="W8r-k5-CqM" secondAttribute="centerY" id="sU2-fa-7Xz"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -845,6 +854,7 @@
                                     <constraint firstItem="W8r-k5-CqM" firstAttribute="centerX" secondItem="cIT-lq-zh5" secondAttribute="centerX" id="67Z-Nq-9pc"/>
                                     <constraint firstItem="mX4-Pi-ick" firstAttribute="leading" secondItem="cIT-lq-zh5" secondAttribute="leading" id="BwG-Lq-tSr"/>
                                     <constraint firstAttribute="trailing" secondItem="W8r-k5-CqM" secondAttribute="trailing" constant="20" id="EPC-bV-6pr"/>
+                                    <constraint firstItem="W8r-k5-CqM" firstAttribute="centerX" secondItem="cIT-lq-zh5" secondAttribute="centerX" id="FfW-Pl-5st"/>
                                     <constraint firstItem="W8r-k5-CqM" firstAttribute="leading" secondItem="cIT-lq-zh5" secondAttribute="leading" constant="20" id="TrC-D9-ub9"/>
                                     <constraint firstItem="mX4-Pi-ick" firstAttribute="top" secondItem="cIT-lq-zh5" secondAttribute="top" id="uae-8K-kuH"/>
                                     <constraint firstItem="W8r-k5-CqM" firstAttribute="centerY" secondItem="cIT-lq-zh5" secondAttribute="centerY" id="vjn-CU-QEM"/>
@@ -865,10 +875,10 @@
             </objects>
             <point key="canvasLocation" x="-1633" y="14"/>
         </scene>
-        <!--LoginVC-->
+        <!--SigninVC-->
         <scene sceneID="RWT-lX-45o">
             <objects>
-                <viewController id="Ppa-3R-AVV" customClass="LoginVC" customModule="ChatAppFirebase" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SigninSB" id="Ppa-3R-AVV" customClass="SigninVC" customModule="ChatAppFirebase" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xw8-ds-FSJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -884,7 +894,7 @@
                                         </constraints>
                                         <state key="normal" image="close"/>
                                         <connections>
-                                            <action selector="closeBtnWasPressed:" destination="Ppa-3R-AVV" eventType="touchUpInside" id="NEV-jo-smS"/>
+                                            <action selector="closeBtnWasPressed:" destination="Ppa-3R-AVV" eventType="touchUpInside" id="ZZS-6x-4l9"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="email sign in" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z0x-AH-eUC">
@@ -896,7 +906,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="FYO-ns-u8V">
                                         <rect key="frame" x="60" y="90" width="255" height="135"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Miy-uE-rwC">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Miy-uE-rwC" customClass="CustomTextField" customModule="ChatAppFirebase" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="255" height="60"/>
                                                 <color key="backgroundColor" red="0.15986236929893494" green="0.16772785782814026" blue="0.20646014809608459" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
@@ -907,7 +917,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FGI-1H-Qg2">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FGI-1H-Qg2" customClass="CustomTextField" customModule="ChatAppFirebase" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="75" width="255" height="60"/>
                                                 <color key="backgroundColor" red="0.15986236929893494" green="0.16772785782814026" blue="0.20646014809608459" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
@@ -916,7 +926,7 @@
                                                 </constraints>
                                                 <color key="textColor" red="0.56078431370000004" green="0.81176470590000005" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -931,19 +941,37 @@
                                             <color key="titleColor" red="0.015686274510000001" green="0.6705882353" blue="0.7725490196" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="signInBtnWasPressed:" destination="Ppa-3R-AVV" eventType="touchUpInside" id="1la-10-MX5"/>
+                                            <action selector="signInBtnWasPressed:" destination="Ppa-3R-AVV" eventType="touchUpInside" id="K5X-WG-XGC"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q2i-9B-naB">
+                                        <rect key="frame" x="173" y="302" width="29" height="28"/>
+                                        <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="24"/>
+                                        <color key="textColor" red="0.015686274510000001" green="0.6705882353" blue="0.7725490196" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O24-qz-65D">
+                                        <rect key="frame" x="161" y="350" width="53" height="37"/>
+                                        <fontDescription key="fontDescription" name="DiwanMishafi" family="Mishafi" pointSize="17"/>
+                                        <state key="normal" title="LOGIN"/>
+                                        <connections>
+                                            <action selector="loginBtnWasPressed:" destination="Ppa-3R-AVV" eventType="touchUpInside" id="qRY-lg-HYq"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.25195008516311646" green="0.26964020729064941" blue="0.31568059325218201" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="u6R-TZ-KnX" firstAttribute="centerX" secondItem="fBd-Oz-VNg" secondAttribute="centerX" id="Ag9-xX-moM"/>
+                                    <constraint firstItem="O24-qz-65D" firstAttribute="centerX" secondItem="fBd-Oz-VNg" secondAttribute="centerX" id="EH3-hG-qPK"/>
                                     <constraint firstItem="FYO-ns-u8V" firstAttribute="top" secondItem="Z0x-AH-eUC" secondAttribute="bottom" constant="20" id="FiU-aW-XTx"/>
                                     <constraint firstItem="Z0x-AH-eUC" firstAttribute="top" secondItem="fBd-Oz-VNg" secondAttribute="top" constant="50" id="HGf-Fx-2SQ"/>
                                     <constraint firstItem="Z0x-AH-eUC" firstAttribute="centerX" secondItem="fBd-Oz-VNg" secondAttribute="centerX" id="Jk0-hh-W7u"/>
                                     <constraint firstItem="roV-aA-uky" firstAttribute="top" secondItem="fBd-Oz-VNg" secondAttribute="top" constant="24" id="OIF-O5-xAa"/>
                                     <constraint firstItem="FYO-ns-u8V" firstAttribute="centerX" secondItem="fBd-Oz-VNg" secondAttribute="centerX" id="Sbx-H0-hU6"/>
+                                    <constraint firstItem="q2i-9B-naB" firstAttribute="top" secondItem="u6R-TZ-KnX" secondAttribute="bottom" constant="25" id="SdO-g4-vab"/>
                                     <constraint firstItem="roV-aA-uky" firstAttribute="leading" secondItem="fBd-Oz-VNg" secondAttribute="leading" constant="24" id="SgE-yR-coD"/>
+                                    <constraint firstItem="O24-qz-65D" firstAttribute="top" secondItem="q2i-9B-naB" secondAttribute="bottom" constant="20" id="VeT-os-Xgw"/>
+                                    <constraint firstItem="q2i-9B-naB" firstAttribute="centerX" secondItem="fBd-Oz-VNg" secondAttribute="centerX" id="eDi-QP-eqO"/>
                                     <constraint firstItem="u6R-TZ-KnX" firstAttribute="top" secondItem="FYO-ns-u8V" secondAttribute="bottom" constant="20" id="tkf-dS-CqB"/>
                                 </constraints>
                             </view>
@@ -958,13 +986,13 @@
                         <viewLayoutGuide key="safeArea" id="Mmw-xA-wlc"/>
                     </view>
                     <connections>
-                        <outlet property="emailTextField" destination="Miy-uE-rwC" id="DSj-kr-uX9"/>
-                        <outlet property="passwordTextField" destination="FGI-1H-Qg2" id="5AY-My-1Ld"/>
+                        <outlet property="emailTextField" destination="Miy-uE-rwC" id="bMt-Ld-tyB"/>
+                        <outlet property="passwordTextField" destination="FGI-1H-Qg2" id="Lf4-D4-599"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w5u-eZ-6Of" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-873" y="14"/>
+            <point key="canvasLocation" x="-850" y="0.0"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">

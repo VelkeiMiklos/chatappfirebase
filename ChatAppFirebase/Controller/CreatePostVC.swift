@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Firebase
 class CreatePostVC: UIViewController {
 
     @IBOutlet weak var emailLbl: UILabel!
