@@ -10,9 +10,11 @@ import UIKit
 import Firebase
 class CreatePostVC: UIViewController {
     
+    //Outlets
     @IBOutlet weak var emailLbl: UILabel!
     @IBOutlet weak var profileImg: UIImageView!
     @IBOutlet weak var textView: UITextView!
+    
     @IBOutlet weak var sendBtn: UIButton!
     
     override func viewDidLoad() {
@@ -35,17 +37,13 @@ class CreatePostVC: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
-    //Send
-    @IBAction func sendBtnWasPressed(_ sender: Any) {
-        
+    @IBAction func sendBtnWasPressed(_ sender: UIButton) {
         //Ha nem üres és nem is a default szöveg akkor van üzenet
-        if textView != nil && textView.text != "Say something here..."{
+        if textView.text != nil && textView.text != "Say something here..."{
             DataService.instance.uploadPost(uid: (Auth.auth().currentUser?.uid)!, message: textView.text!, groupKey: nil, feedSendComplete: { (feedSendWasSuccess) in
                 if feedSendWasSuccess{
-                    
                     self.dismiss(animated: true, completion: nil)
                 }else{
-                    self.sendBtn.isEnabled = true
                     let alertController = UIAlertController(title: "Error", message: "Your message was not to send", preferredStyle: .alert)
                     let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
                     alertController.addAction(defaultAction)
@@ -61,8 +59,8 @@ class CreatePostVC: UIViewController {
             present(alertController, animated: true, completion: nil)
             return
         }
-        
     }
+
 }
 
 extension CreatePostVC: UITextViewDelegate{

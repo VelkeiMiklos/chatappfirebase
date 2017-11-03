@@ -62,8 +62,9 @@ class DataService{
         }
     }
     
+    //Email lekérdezése uid alapján
     func getUserEmailbyUid(uid:String, returnedEmail: @escaping(_ userEmailName: String)->()){
-        
+    
         REF_USERS.observeSingleEvent(of: .value) { (userSnapshot) in
             guard let userFromSnapshot = userSnapshot.children.allObjects as? [DataSnapshot] else {return}
             //Ha a gyerekek között itt van a keresett uid akkor meg van az email
@@ -72,13 +73,48 @@ class DataService{
                     let u = user.childSnapshot(forPath: CO_EMAIL).value as! String
                     returnedEmail(u)
                 }
-                
             }
-
         }
-        
     }
     
+    //Le kell kérdezni az összes email-t keresés alapján
+    func getEmails(searchQuery: String, returnedEmails: @escaping(_ userEmailArray:[String])->()){
+        var emailArray = [String]()
+        REF_USERS.observe(.value) { (userSnapshot) in
+            guard let userFromSnapshot = userSnapshot.children.allObjects as? [DataSnapshot] else { return }
+            
+            for user in userFromSnapshot{
+                let email = user.childSnapshot(forPath: CO_EMAIL).value as! String
+                if email.contains(searchQuery){
+                    emailArray.append(email)
+                    
+                }
+            }
+            returnedEmails(emailArray)
+   
+        }
+    }
     
+    //UID-k lekérdezése
+    func getIdsbyEmails(emailArray: [String], returnedIds: @escaping(_ idsArray:[String])->()){
+        var idsArray = [String]()
+        REF_USERS.observeSingleEvent(of: .value) { (usersSnapshot) in
+            guard let userFromSnapshot = usersSnapshot.children.allObjects as? [DataSnapshot] else { return }
+            for user in userFromSnapshot{
+                let email = user.childSnapshot(forPath: CO_EMAIL).value as! String
+                if emailArray.contains(email){
+                    idsArray.append(user.key)
+                }
+            }
+            returnedIds(idsArray)
+        }
+    }
+    //Csoport létrehozása
+    func createGroup(title: String, description: String, ids: [String], handler: @escaping(_ groupCreated: Bool)->()){
+        REF_GROUPS.childByAutoId().updateChildValues(["title" : title,
+                                                      "description": description,
+                                                      "members": ids ])
+        handler(true)
+    }
     
 }

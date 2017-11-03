@@ -28,6 +28,7 @@ let CO_SB_SIGNINVC = "SigninSB"
 
 //Cells
 let CO_FEED_CELL = "feedCell"
+let CO_CREATE_GROUP_CELL = "createGroupCell"
 
 //Image
 let CO_DEFAULT_PROFILE_IMAGE = "defaultProfileImage"
