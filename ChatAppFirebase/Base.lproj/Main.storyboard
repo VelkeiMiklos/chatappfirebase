@@ -43,7 +43,7 @@
                                                 <rect key="frame" x="330" y="24" width="21" height="22"/>
                                                 <state key="normal" image="compose"/>
                                                 <connections>
-                                                    <action selector="addNewFeedBtnWasPressed:" destination="9pv-A4-QxB" eventType="touchUpInside" id="0GH-XQ-FXm"/>
+                                                    <segue destination="Lgd-Jh-VCN" kind="showDetail" id="bRF-V7-Fc8"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -61,46 +61,49 @@
                                         <rect key="frame" x="0.0" y="70" width="375" height="528"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="feedCell" rowHeight="90" id="Ybu-KK-bjy" customClass="FeedCell" customModule="ChatAppFirebase" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="28" width="375" height="90"/>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="feedCell" rowHeight="120" id="Ybu-KK-bjy" customClass="FeedCell" customModule="ChatAppFirebase" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="375" height="120"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ybu-KK-bjy" id="09e-PT-vXu">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="119.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultProfileImage" translatesAutoresizingMaskIntoConstraints="NO" id="ogq-6w-uoS">
-                                                            <rect key="frame" x="14" y="15" width="60" height="60"/>
+                                                            <rect key="frame" x="16" y="30" width="60" height="60"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="60" id="PF9-W9-8Gl"/>
-                                                                <constraint firstAttribute="width" constant="60" id="eeT-XT-gU1"/>
+                                                                <constraint firstAttribute="width" constant="60" id="HnX-XS-9tv"/>
+                                                                <constraint firstAttribute="height" constant="60" id="fdb-mh-Zti"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="teszt@chatappfirebase.hu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sby-6w-r2r">
-                                                            <rect key="frame" x="82" y="15" width="277" height="20"/>
-                                                            <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message content..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="fI1-sd-I0o">
+                                                            <rect key="frame" x="84" y="44" width="283" height="68"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="68" id="fIB-iE-2Sd"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="15"/>
                                                             <color key="textColor" red="0.015686274510000001" green="0.6705882353" blue="0.7725490196" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message content..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="fI1-sd-I0o">
-                                                            <rect key="frame" x="82" y="43" width="277" height="35"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="35" id="oog-e3-Y1c"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="15"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="teszt@chatappfirebase.hu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sby-6w-r2r">
+                                                            <rect key="frame" x="84" y="16" width="275" height="20"/>
+                                                            <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
                                                             <color key="textColor" red="0.015686274510000001" green="0.6705882353" blue="0.7725490196" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.12895631790161133" green="0.13544049859046936" blue="0.16365152597427368" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="trailingMargin" secondItem="fI1-sd-I0o" secondAttribute="trailing" constant="8" id="0Uw-qj-YUd"/>
-                                                        <constraint firstItem="ogq-6w-uoS" firstAttribute="leading" secondItem="09e-PT-vXu" secondAttribute="leadingMargin" constant="6" id="54f-oV-JgN"/>
-                                                        <constraint firstItem="ogq-6w-uoS" firstAttribute="centerY" secondItem="09e-PT-vXu" secondAttribute="centerY" id="8KU-vX-DmX"/>
-                                                        <constraint firstItem="sby-6w-r2r" firstAttribute="leading" secondItem="ogq-6w-uoS" secondAttribute="trailing" constant="8" id="8wP-14-vQP"/>
-                                                        <constraint firstItem="fI1-sd-I0o" firstAttribute="top" secondItem="sby-6w-r2r" secondAttribute="bottom" constant="8" id="CfT-FO-haw"/>
-                                                        <constraint firstAttribute="trailingMargin" secondItem="sby-6w-r2r" secondAttribute="trailing" constant="8" id="VYZ-dj-0km"/>
-                                                        <constraint firstItem="sby-6w-r2r" firstAttribute="top" secondItem="ogq-6w-uoS" secondAttribute="top" id="WJC-e9-gLI"/>
-                                                        <constraint firstItem="fI1-sd-I0o" firstAttribute="leading" secondItem="ogq-6w-uoS" secondAttribute="trailing" constant="8" id="paN-51-Azy"/>
+                                                        <constraint firstItem="ogq-6w-uoS" firstAttribute="leading" secondItem="09e-PT-vXu" secondAttribute="leadingMargin" constant="8" id="1eU-Ln-cPk"/>
+                                                        <constraint firstItem="ogq-6w-uoS" firstAttribute="leading" secondItem="09e-PT-vXu" secondAttribute="leadingMargin" constant="8" id="3Bt-QA-jkI"/>
+                                                        <constraint firstItem="sby-6w-r2r" firstAttribute="leading" secondItem="ogq-6w-uoS" secondAttribute="trailing" constant="8" id="SHU-A5-S9q"/>
+                                                        <constraint firstItem="ogq-6w-uoS" firstAttribute="top" secondItem="09e-PT-vXu" secondAttribute="topMargin" constant="22" id="SJY-8V-Olz"/>
+                                                        <constraint firstItem="sby-6w-r2r" firstAttribute="top" secondItem="09e-PT-vXu" secondAttribute="topMargin" constant="8" id="ZJb-QY-eow"/>
+                                                        <constraint firstItem="fI1-sd-I0o" firstAttribute="leading" secondItem="ogq-6w-uoS" secondAttribute="trailing" constant="8" id="ZKI-9U-rSg"/>
+                                                        <constraint firstItem="ogq-6w-uoS" firstAttribute="centerY" secondItem="09e-PT-vXu" secondAttribute="centerY" id="cVj-MD-qts"/>
+                                                        <constraint firstItem="fI1-sd-I0o" firstAttribute="top" secondItem="sby-6w-r2r" secondAttribute="bottom" constant="8" id="exE-Nc-bp4"/>
+                                                        <constraint firstAttribute="trailing" secondItem="fI1-sd-I0o" secondAttribute="trailing" constant="8" id="gQ6-Wi-jbo"/>
+                                                        <constraint firstAttribute="bottom" secondItem="fI1-sd-I0o" secondAttribute="bottom" constant="8" id="lyc-QX-1hk"/>
+                                                        <constraint firstAttribute="trailingMargin" secondItem="sby-6w-r2r" secondAttribute="trailing" constant="8" id="vcO-d8-LUJ"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
                                                 <connections>
@@ -236,6 +239,7 @@
                     <connections>
                         <outlet property="emailLbl" destination="gYc-lA-rSu" id="zLM-cW-ref"/>
                         <outlet property="profileImg" destination="5QF-dh-ahO" id="8aS-Th-5cn"/>
+                        <outlet property="sendBtn" destination="04q-1q-MBd" id="8kI-nN-Q9g"/>
                         <outlet property="textView" destination="5sk-x2-ZGY" id="71v-3c-8pC"/>
                     </connections>
                 </viewController>

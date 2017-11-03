@@ -18,10 +18,10 @@ class FeedCell: UITableViewCell {
         // Initialization code
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    func configureCell(profileImg: UIImage, email: String, message: String){
+        self.profileImg.image = profileImg
+        self.emailLbl.text = email
+        self.messageLbl.text = message
     }
 
 }
