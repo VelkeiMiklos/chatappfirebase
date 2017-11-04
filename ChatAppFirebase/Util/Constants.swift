@@ -22,6 +22,9 @@ let CO_CONTENT = "content"
 let CO_SENDER_ID = "senderId"
 let CO_EMAIL     = "email"
 let CO_PROVIDER  = "provider:"
+let CO_TITLE     = "title"
+let CO_DESCRIPTION = "description"
+let CO_MEMBERS     = "members"
 //Storyboard azonosítók
 let CO_SB_AUTHVC = "AuthSB"
 let CO_SB_SIGNINVC = "SigninSB"
@@ -29,6 +32,7 @@ let CO_SB_SIGNINVC = "SigninSB"
 //Cells
 let CO_FEED_CELL = "feedCell"
 let CO_CREATE_GROUP_CELL = "createGroupCell"
+let CO_GROUP_CELL = "groupCell"
 
 //Image
 let CO_DEFAULT_PROFILE_IMAGE = "defaultProfileImage"

@@ -87,18 +87,17 @@ class DataService{
                 let email = user.childSnapshot(forPath: CO_EMAIL).value as! String
                 if email.contains(searchQuery){
                     emailArray.append(email)
-                    
                 }
             }
             returnedEmails(emailArray)
-   
         }
     }
     
     //UID-k lekérdezése
     func getIdsbyEmails(emailArray: [String], returnedIds: @escaping(_ idsArray:[String])->()){
-        var idsArray = [String]()
+
         REF_USERS.observeSingleEvent(of: .value) { (usersSnapshot) in
+           var idsArray = [String]()
             guard let userFromSnapshot = usersSnapshot.children.allObjects as? [DataSnapshot] else { return }
             for user in userFromSnapshot{
                 let email = user.childSnapshot(forPath: CO_EMAIL).value as! String
@@ -115,6 +114,24 @@ class DataService{
                                                       "description": description,
                                                       "members": ids ])
         handler(true)
+    }
+    //
+    func getGroups(returnedGroups: @escaping(_ returnedGroupsArray:[Groups])->()){
+        var groupsArray = [Groups]()
+        REF_GROUPS.observeSingleEvent(of: .value) { (groupsSnapshot) in
+            guard let groupsFromSnapshot = groupsSnapshot.children.allObjects as? [DataSnapshot] else { return }
+            for group in groupsFromSnapshot{
+                let title = group.childSnapshot(forPath: CO_TITLE).value as! String
+                let description = group.childSnapshot(forPath: CO_DESCRIPTION).value as! String
+                let memberArray = group.childSnapshot(forPath: CO_MEMBERS).value as! [String]
+                //Azokat a csoportokat mutassa amiben a bejelentkezett felh. benne van
+                if memberArray.contains((Auth.auth().currentUser?.uid)!){
+                    let group = Groups(groupTitle: title, groupDesc: description, memberCount: memberArray.count, key: group.key, members: memberArray)
+                    groupsArray.append(group)
+                }
+            }
+            returnedGroups(groupsArray)
+        }
     }
     
 }

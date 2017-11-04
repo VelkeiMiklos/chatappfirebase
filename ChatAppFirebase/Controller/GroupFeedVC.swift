@@ -14,8 +14,13 @@ class GroupFeedVC: UIViewController {
     @IBOutlet weak var groupNameLbl: UILabel!
     @IBOutlet weak var groupMemberLbl: UILabel!
     @IBOutlet weak var messageTextField: UITextField!
+    
+    @IBOutlet weak var tableView: UITableView!
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+
 
         // Do any additional setup after loading the view.
     }
@@ -27,3 +32,4 @@ class GroupFeedVC: UIViewController {
     }
     
 }
+

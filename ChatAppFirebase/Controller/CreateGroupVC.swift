@@ -60,18 +60,17 @@ class CreateGroupVC: UIViewController {
             idsArray = returnedIds
             //Magamat is hozzá kell adnom
             idsArray.append((Auth.auth().currentUser?.uid)!)
-        }
-        
-        
-        DataService.instance.createGroup(title: title, description: description, ids: idsArray) { (success) in
-            if success{
-                self.dismiss(animated: true, completion: nil)
-            }else{
-                let alertController = UIAlertController(title: "Error", message: "The group creatin process was not successful", preferredStyle: .alert)
-                let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-                alertController.addAction(defaultAction)
-                self.present(alertController, animated: true, completion: nil)
-                return
+            
+            DataService.instance.createGroup(title: title, description: description, ids: idsArray) { (success) in
+                if success{
+                    self.dismiss(animated: true, completion: nil)
+                }else{
+                    let alertController = UIAlertController(title: "Error", message: "The group creatin process was not successful", preferredStyle: .alert)
+                    let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                    alertController.addAction(defaultAction)
+                    self.present(alertController, animated: true, completion: nil)
+                    return
+                }
             }
         }
     }
@@ -97,17 +96,20 @@ class CreateGroupVC: UIViewController {
 }
 
 extension CreateGroupVC: UITableViewDelegate, UITableViewDataSource{
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return emailArray.count
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+       
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CO_CREATE_GROUP_CELL, for: indexPath) as? CreateGroupCell else { return UITableViewCell() }
         
         let image = UIImage(named: CO_DEFAULT_PROFILE_IMAGE)!
-        
         let email = emailArray[indexPath.row]
         
         //Ha benne van akkor chekcImg = true ha nincs akkor false
@@ -116,12 +118,11 @@ extension CreateGroupVC: UITableViewDelegate, UITableViewDataSource{
         }else{
             cell.configureCell(profileImg: image, email: email, isSelected: false)
         }
-        
-        
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+       
         guard let cell = tableView.cellForRow(at: indexPath) as? CreateGroupCell else { return }
         
         if !chosenEmailArray.contains(cell.emailLbl.text!){

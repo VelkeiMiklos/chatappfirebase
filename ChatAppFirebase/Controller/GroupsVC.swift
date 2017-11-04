@@ -12,14 +12,46 @@ class GroupsVC: UIViewController {
 
     //Outlets
     @IBOutlet weak var tableView: UITableView!
+    
+    //Variables
+    var groupArray = [Groups]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.delegate = self
+        tableView.dataSource = self
         // Do any additional setup after loading the view, typically from a nib.
     }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        //A dataservice-ben single event van ez egyszer fut le. Kell egy observe event ami folyamatosan figyeli a változást és lekéri
+        DataService.instance.REF_GROUPS.observe(.value) { (snapshot) in
+            DataService.instance.getGroups { (returnedGroups) in
+                self.groupArray = returnedGroups
+                self.tableView.reloadData()
+            }
+        }
 
-    //Actions
-    @IBAction func addBtnWasPressed(_ sender: Any) {
     }
     
 }
-
+extension GroupsVC: UITableViewDelegate, UITableViewDataSource{
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return groupArray.count
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: CO_GROUP_CELL, for: indexPath) as? GroupCell else { return UITableViewCell() }
+        
+        let group = groupArray[indexPath.row]
+        
+        cell.configureCell(title: group.groupTitle, description: group.groupDesc, member: group.memberCount)
+        return cell
+        
+    }
+    
+}

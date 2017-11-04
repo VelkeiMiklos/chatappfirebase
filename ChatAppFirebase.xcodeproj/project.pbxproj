@@ -25,6 +25,7 @@
 		F5D9B9111FA656BB00F633CB /* MeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D9B9101FA656BB00F633CB /* MeVC.swift */; };
 		F5D9B9131FA6599800F633CB /* CreatePostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D9B9121FA6599800F633CB /* CreatePostVC.swift */; };
 		F5D9B9151FA65D3B00F633CB /* CreateGroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D9B9141FA65D3B00F633CB /* CreateGroupVC.swift */; };
+		F5E31A2C1FADA6FE00C5E894 /* Groups.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E31A2B1FADA6FE00C5E894 /* Groups.swift */; };
 		F5F222171FA9C53C00EC7F73 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F5F222161FA9C53800EC7F73 /* GoogleService-Info.plist */; };
 		F5F222191FA9CA2800EC7F73 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F222181FA9CA2800EC7F73 /* Constants.swift */; };
 		F5F2221B1FA9CA5500EC7F73 /* DataServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F2221A1FA9CA5500EC7F73 /* DataServices.swift */; };
@@ -53,6 +54,7 @@
 		F5D9B9101FA656BB00F633CB /* MeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeVC.swift; sourceTree = "<group>"; };
 		F5D9B9121FA6599800F633CB /* CreatePostVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostVC.swift; sourceTree = "<group>"; };
 		F5D9B9141FA65D3B00F633CB /* CreateGroupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGroupVC.swift; sourceTree = "<group>"; };
+		F5E31A2B1FADA6FE00C5E894 /* Groups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Groups.swift; sourceTree = "<group>"; };
 		F5F222161FA9C53800EC7F73 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F5F222181FA9CA2800EC7F73 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F5F2221A1FA9CA5500EC7F73 /* DataServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataServices.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				F550CEA11FAC66C500A97B71 /* Message.swift */,
+				F5E31A2B1FADA6FE00C5E894 /* Groups.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -324,6 +327,7 @@
 				F5D9B9111FA656BB00F633CB /* MeVC.swift in Sources */,
 				F5C45C641FAA05C900D6A907 /* SigninVC.swift in Sources */,
 				F5F222191FA9CA2800EC7F73 /* Constants.swift in Sources */,
+				F5E31A2C1FADA6FE00C5E894 /* Groups.swift in Sources */,
 				F5D9B9151FA65D3B00F633CB /* CreateGroupVC.swift in Sources */,
 				F550CEA01FAC65D100A97B71 /* UIViewExt.swift in Sources */,
 				F5D25E401FA64BA60003F0CA /* GroupsVC.swift in Sources */,
