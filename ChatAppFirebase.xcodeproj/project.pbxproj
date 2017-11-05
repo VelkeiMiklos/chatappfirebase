@@ -10,6 +10,7 @@
 		21C48752A8D40F8C973F7350 /* Pods_ChatAppFirebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA69B0C9DF040520B4C90A4A /* Pods_ChatAppFirebase.framework */; };
 		F550CEA01FAC65D100A97B71 /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = F550CE9F1FAC65D100A97B71 /* UIViewExt.swift */; };
 		F550CEA21FAC66C500A97B71 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = F550CEA11FAC66C500A97B71 /* Message.swift */; };
+		F5585D261FADBEA100CB8849 /* GroupChatFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5585D251FADBEA100CB8849 /* GroupChatFeedCell.swift */; };
 		F5C45C641FAA05C900D6A907 /* SigninVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C45C631FAA05C900D6A907 /* SigninVC.swift */; };
 		F5D25E3C1FA64BA60003F0CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D25E3B1FA64BA60003F0CA /* AppDelegate.swift */; };
 		F5D25E3E1FA64BA60003F0CA /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D25E3D1FA64BA60003F0CA /* FeedVC.swift */; };
@@ -25,6 +26,7 @@
 		F5D9B9111FA656BB00F633CB /* MeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D9B9101FA656BB00F633CB /* MeVC.swift */; };
 		F5D9B9131FA6599800F633CB /* CreatePostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D9B9121FA6599800F633CB /* CreatePostVC.swift */; };
 		F5D9B9151FA65D3B00F633CB /* CreateGroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D9B9141FA65D3B00F633CB /* CreateGroupVC.swift */; };
+		F5E1582A1FAE102300134F92 /* UIViewControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E158291FAE102300134F92 /* UIViewControllerExt.swift */; };
 		F5E31A2C1FADA6FE00C5E894 /* Groups.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E31A2B1FADA6FE00C5E894 /* Groups.swift */; };
 		F5F222171FA9C53C00EC7F73 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F5F222161FA9C53800EC7F73 /* GoogleService-Info.plist */; };
 		F5F222191FA9CA2800EC7F73 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F222181FA9CA2800EC7F73 /* Constants.swift */; };
@@ -37,6 +39,7 @@
 		D2DE78933837274F42BFF881 /* Pods-ChatAppFirebase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatAppFirebase.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChatAppFirebase/Pods-ChatAppFirebase.release.xcconfig"; sourceTree = "<group>"; };
 		F550CE9F1FAC65D100A97B71 /* UIViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
 		F550CEA11FAC66C500A97B71 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		F5585D251FADBEA100CB8849 /* GroupChatFeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupChatFeedCell.swift; sourceTree = "<group>"; };
 		F5C45C631FAA05C900D6A907 /* SigninVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninVC.swift; sourceTree = "<group>"; };
 		F5D25E381FA64BA60003F0CA /* ChatAppFirebase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatAppFirebase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5D25E3B1FA64BA60003F0CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -54,6 +57,7 @@
 		F5D9B9101FA656BB00F633CB /* MeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeVC.swift; sourceTree = "<group>"; };
 		F5D9B9121FA6599800F633CB /* CreatePostVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostVC.swift; sourceTree = "<group>"; };
 		F5D9B9141FA65D3B00F633CB /* CreateGroupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGroupVC.swift; sourceTree = "<group>"; };
+		F5E158291FAE102300134F92 /* UIViewControllerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExt.swift; sourceTree = "<group>"; };
 		F5E31A2B1FADA6FE00C5E894 /* Groups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Groups.swift; sourceTree = "<group>"; };
 		F5F222161FA9C53800EC7F73 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F5F222181FA9CA2800EC7F73 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -152,6 +156,7 @@
 				F5D979001FA7C15D0066A43B /* GroupCell.swift */,
 				F5D979021FA7C3BC0066A43B /* CreateGroupCell.swift */,
 				F5F2221E1FA9D0BA00EC7F73 /* CustomTextField.swift */,
+				F5585D251FADBEA100CB8849 /* GroupChatFeedCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -169,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				F550CE9F1FAC65D100A97B71 /* UIViewExt.swift */,
+				F5E158291FAE102300134F92 /* UIViewControllerExt.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -319,12 +325,14 @@
 				F5F2221B1FA9CA5500EC7F73 /* DataServices.swift in Sources */,
 				F550CEA21FAC66C500A97B71 /* Message.swift in Sources */,
 				F5D979031FA7C3BC0066A43B /* CreateGroupCell.swift in Sources */,
+				F5E1582A1FAE102300134F92 /* UIViewControllerExt.swift in Sources */,
 				F5F2221F1FA9D0BA00EC7F73 /* CustomTextField.swift in Sources */,
 				F5D978FF1FA7C0BA0066A43B /* FeedCell.swift in Sources */,
 				F5D979011FA7C15D0066A43B /* GroupCell.swift in Sources */,
 				F5D978F91FA7BF510066A43B /* GroupFeedVC.swift in Sources */,
 				F5D978FB1FA7BF820066A43B /* AuthVC.swift in Sources */,
 				F5D9B9111FA656BB00F633CB /* MeVC.swift in Sources */,
+				F5585D261FADBEA100CB8849 /* GroupChatFeedCell.swift in Sources */,
 				F5C45C641FAA05C900D6A907 /* SigninVC.swift in Sources */,
 				F5F222191FA9CA2800EC7F73 /* Constants.swift in Sources */,
 				F5E31A2C1FADA6FE00C5E894 /* Groups.swift in Sources */,

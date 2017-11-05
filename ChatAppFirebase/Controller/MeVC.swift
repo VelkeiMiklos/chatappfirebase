@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 class MeVC: UIViewController {
-
+    
     //Outlets
     @IBOutlet weak var profileImg: UIImageView!
     @IBOutlet weak var emailLbl: UILabel!
@@ -31,7 +31,7 @@ class MeVC: UIViewController {
     
     //Kilépés
     @IBAction func singOutBtnWasPressed(_ sender: Any) {
-
+        
         let logOutMenu = UIAlertController(title: nil, message: "Are you sure want to logout?", preferredStyle: .actionSheet)
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
@@ -58,6 +58,6 @@ class MeVC: UIViewController {
         
         self.present(logOutMenu, animated: true, completion: nil)
         
-
+        
     }
 }

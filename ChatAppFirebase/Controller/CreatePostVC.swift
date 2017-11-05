@@ -44,7 +44,7 @@ class CreatePostVC: UIViewController {
                 if feedSendWasSuccess{
                     self.dismiss(animated: true, completion: nil)
                 }else{
-                    let alertController = UIAlertController(title: "Error", message: "Your message was not to send", preferredStyle: .alert)
+                    let alertController = UIAlertController(title: "Error", message: "your message wasn't posted!", preferredStyle: .alert)
                     let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
                     alertController.addAction(defaultAction)
                     self.present(alertController, animated: true, completion: nil)
@@ -60,7 +60,7 @@ class CreatePostVC: UIViewController {
             return
         }
     }
-
+    
 }
 
 extension CreatePostVC: UITextViewDelegate{

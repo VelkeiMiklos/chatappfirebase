@@ -21,8 +21,6 @@ class Groups{
         self.memberCount = memberCount
         self.key         = key
         self.members = members
-        
     }
-    
-    
+
 }

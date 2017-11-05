@@ -471,7 +471,7 @@
         <!--Group FeedVC-->
         <scene sceneID="PWC-tV-o8q">
             <objects>
-                <viewController id="e7m-UT-hpH" customClass="GroupFeedVC" customModule="ChatAppFirebase" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GroupFeedSB" id="e7m-UT-hpH" customClass="GroupFeedVC" customModule="ChatAppFirebase" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="i9B-dC-fLa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -482,8 +482,8 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SuB-6y-Zsx">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_newgroup" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mFa-qq-nNm">
-                                                <rect key="frame" x="141.5" y="25" width="92.5" height="20"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_grouptitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mFa-qq-nNm">
+                                                <rect key="frame" x="131.5" y="25" width="113" height="20"/>
                                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
                                                 <color key="textColor" red="0.56078431370000004" green="0.81176470590000005" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -506,7 +506,7 @@
                                             <constraint firstItem="14N-yg-EIK" firstAttribute="leading" secondItem="SuB-6y-Zsx" secondAttribute="leading" constant="24" id="s1s-aZ-Alv"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="teszt@chatappfirebase.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="x6S-x8-POw">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="teszt@chatappfirebase.com, teszt2@chatappfirebase.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="x6S-x8-POw">
                                         <rect key="frame" x="8" y="78" width="359" height="20"/>
                                         <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
                                         <color key="textColor" red="0.56078431370000004" green="0.81176470590000005" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -516,7 +516,7 @@
                                         <rect key="frame" x="0.0" y="108" width="375" height="489"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="100" id="ubT-by-pfm">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="groupChatFeedCell" rowHeight="100" id="ubT-by-pfm" customClass="GroupChatFeedCell" customModule="ChatAppFirebase" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ubT-by-pfm" id="37Y-MG-bYT">
@@ -559,6 +559,11 @@
                                                     </constraints>
                                                 </tableViewCellContentView>
                                                 <color key="backgroundColor" red="0.16119208931922913" green="0.16905537247657776" blue="0.20562991499900818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <connections>
+                                                    <outlet property="emailLbl" destination="vii-HH-PpM" id="q66-Hu-mqQ"/>
+                                                    <outlet property="messageContentLbl" destination="zIU-LL-rXo" id="nG5-RT-oV8"/>
+                                                    <outlet property="profileImg" destination="gVH-0O-bPv" id="5PF-Zz-5rD"/>
+                                                </connections>
                                             </tableViewCell>
                                         </prototypes>
                                     </tableView>
@@ -615,6 +620,7 @@
                         <outlet property="groupMemberLbl" destination="x6S-x8-POw" id="fbT-32-i8k"/>
                         <outlet property="groupNameLbl" destination="mFa-qq-nNm" id="8AZ-4e-iH8"/>
                         <outlet property="messageTextField" destination="H83-Qs-bfx" id="Or6-xl-QVZ"/>
+                        <outlet property="sendBtn" destination="tqT-8Q-jkP" id="FFO-js-bhJ"/>
                         <outlet property="tableView" destination="eum-bn-5Ny" id="gs2-gg-nEJ"/>
                     </connections>
                 </viewController>

@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 class GroupsVC: UIViewController {
-
+    
     //Outlets
     @IBOutlet weak var tableView: UITableView!
     
@@ -22,6 +22,7 @@ class GroupsVC: UIViewController {
         tableView.dataSource = self
         // Do any additional setup after loading the view, typically from a nib.
     }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         //A dataservice-ben single event van ez egyszer fut le. Kell egy observe event ami folyamatosan figyeli a változást és lekéri
@@ -31,10 +32,9 @@ class GroupsVC: UIViewController {
                 self.tableView.reloadData()
             }
         }
-
     }
-    
 }
+
 extension GroupsVC: UITableViewDelegate, UITableViewDataSource{
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -52,6 +52,13 @@ extension GroupsVC: UITableViewDelegate, UITableViewDataSource{
         cell.configureCell(title: group.groupTitle, description: group.groupDesc, member: group.memberCount)
         return cell
         
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let groupFeedVC = storyboard?.instantiateViewController(withIdentifier: CO_SB_GROUP_FEED_VC) as? GroupFeedVC else{return}
+        groupFeedVC.initData(group: groupArray[indexPath.row])
+        // self.present(groupFeedVC, animated: true, completion: nil)
+        //Jobbról present
+        self.presentDetail(groupFeedVC)
     }
     
 }

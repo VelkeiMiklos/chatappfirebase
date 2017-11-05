@@ -106,7 +106,7 @@ extension CreateGroupVC: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-       
+        
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CO_CREATE_GROUP_CELL, for: indexPath) as? CreateGroupCell else { return UITableViewCell() }
         
         let image = UIImage(named: CO_DEFAULT_PROFILE_IMAGE)!
@@ -122,7 +122,7 @@ extension CreateGroupVC: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-       
+        
         guard let cell = tableView.cellForRow(at: indexPath) as? CreateGroupCell else { return }
         
         if !chosenEmailArray.contains(cell.emailLbl.text!){
