@@ -39,13 +39,13 @@ class CreatePostVC: UIViewController {
     
     @IBAction func sendBtnWasPressed(_ sender: UIButton) {
         //Ha nem üres és nem is a default szöveg akkor van üzenet
-        if textView.text != nil && textView.text != "Say something here..."{
+        if textView.text != nil && textView.text != CO_SAY_SOMETHING_HERE {
             DataService.instance.uploadPost(uid: (Auth.auth().currentUser?.uid)!, message: textView.text!, groupKey: nil, feedSendComplete: { (feedSendWasSuccess) in
                 if feedSendWasSuccess{
                     self.dismiss(animated: true, completion: nil)
                 }else{
-                    let alertController = UIAlertController(title: "Error", message: "your message wasn't posted!", preferredStyle: .alert)
-                    let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                    let alertController = UIAlertController(title: CO_ERROR, message: CO_POST_ERROR, preferredStyle: .alert)
+                    let defaultAction = UIAlertAction(title: CO_OK, style: .cancel, handler: nil)
                     alertController.addAction(defaultAction)
                     self.present(alertController, animated: true, completion: nil)
                     return
@@ -53,8 +53,8 @@ class CreatePostVC: UIViewController {
             })
         }else{
             
-            let alertController = UIAlertController(title: "Error", message: "You cannot send the default message", preferredStyle: .alert)
-            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            let alertController = UIAlertController(title: CO_ERROR, message: CO_DEFAULT_POST_MESSAGE, preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: CO_OK, style: .cancel, handler: nil)
             alertController.addAction(defaultAction)
             present(alertController, animated: true, completion: nil)
             return

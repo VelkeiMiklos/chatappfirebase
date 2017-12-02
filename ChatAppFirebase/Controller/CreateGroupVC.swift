@@ -42,15 +42,15 @@ class CreateGroupVC: UIViewController {
         var idsArray = [String]()
         
         guard let title = groupTitleTxt.text , groupTitleTxt.text != "" else {
-            let alertController = UIAlertController(title: "Error", message: "Please enter a title", preferredStyle: .alert)
-            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            let alertController = UIAlertController(title: CO_ERROR, message: CO_TITLE_ERROR, preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: CO_OK, style: .cancel, handler: nil)
             alertController.addAction(defaultAction)
             present(alertController, animated: true, completion: nil)
             return
         }
         guard let description = groupDescTxt.text , groupDescTxt.text != "" else {
-            let alertController = UIAlertController(title: "Error", message: "Please enter a description", preferredStyle: .alert)
-            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            let alertController = UIAlertController(title: CO_ERROR, message: CO_DESCRIPTION_ERROR, preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: CO_OK, style: .cancel, handler: nil)
             alertController.addAction(defaultAction)
             present(alertController, animated: true, completion: nil)
             return
@@ -65,8 +65,8 @@ class CreateGroupVC: UIViewController {
                 if success{
                     self.dismiss(animated: true, completion: nil)
                 }else{
-                    let alertController = UIAlertController(title: "Error", message: "The group creatin process was not successful", preferredStyle: .alert)
-                    let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                    let alertController = UIAlertController(title: CO_ERROR, message: CO_GROUP_CREATE_ERROR, preferredStyle: .alert)
+                    let defaultAction = UIAlertAction(title: CO_OK, style: .cancel, handler: nil)
                     alertController.addAction(defaultAction)
                     self.present(alertController, animated: true, completion: nil)
                     return
@@ -135,7 +135,7 @@ extension CreateGroupVC: UITableViewDelegate, UITableViewDataSource{
             if chosenEmailArray.count >= 1{
                 groupMemberLbl.text = chosenEmailArray.joined(separator: ", ")
             }else{
-                groupMemberLbl.text = "add people to your group..."
+                groupMemberLbl.text = CO_ADD_PEOPLE
                 doneBtn.isHidden = true
             }
         }

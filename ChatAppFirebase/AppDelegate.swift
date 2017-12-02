@@ -8,18 +8,27 @@
 
 import UIKit
 import Firebase
+import GoogleSignIn
+import FBSDKCoreKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
+class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
+    
     var window: UIWindow?
-
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
-
-        //ha nincsen user akkor az AuthVC-bel induljon
+        
+        
+        //Google
+        GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
+        GIDSignIn.sharedInstance().delegate = self
+        
+        //Facebook
+        FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+        
+        //ha nincsen user akkor az AuthVC-vel induljon
         if Auth.auth().currentUser == nil{
             let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
             let authVC = storyboard.instantiateViewController(withIdentifier: CO_SB_AUTHVC )
@@ -29,6 +38,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return true
     }
+    
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        if let error = error{
+            debugPrint("Could not login with google.:\(error)")
+        }else{
+            print("logged in")
+            guard let controller = GIDSignIn.sharedInstance().uiDelegate as? AuthVC else { return }  //a mi viewcontrollerünk
+            guard let authentication = user.authentication else { return }
+            let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken, accessToken: authentication.accessToken)
+            controller.googleLogin(credential)
+        }
+    }
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        
+        // handled to go back to application after google log in
+        let returnGoogle = GIDSignIn.sharedInstance().handle(url, sourceApplication:options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String, annotation: [UIApplicationOpenURLOptionsKey.annotation])
+        
+        let returnFB = FBSDKApplicationDelegate.sharedInstance().application(app, open: url, options: options)
+        
+        return returnGoogle || returnFB
+    }
+    
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -54,4 +86,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 }
+
 

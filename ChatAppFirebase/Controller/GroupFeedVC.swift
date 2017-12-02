@@ -58,8 +58,8 @@ class GroupFeedVC: UIViewController {
     @IBAction func sendBtnWasPressed(_ sender: Any) {
         
         guard let message = messageTextField.text , messageTextField.text != "" else {
-            let alertController = UIAlertController(title: "Error", message: "Please enter a message", preferredStyle: .alert)
-            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            let alertController = UIAlertController(title: CO_ERROR, message: CO_MESSAGE_ERROR, preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: CO_OK, style: .cancel, handler: nil)
             alertController.addAction(defaultAction)
             present(alertController, animated: true, completion: nil)
             return
@@ -70,8 +70,8 @@ class GroupFeedVC: UIViewController {
                 self.messageTextField.text = ""
                 self.tableView.reloadData()
             }else{
-                let alertController = UIAlertController(title: "Error", message: "Your message wasn't posted!", preferredStyle: .alert)
-                let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                let alertController = UIAlertController(title: CO_ERROR, message: CO_POST_ERROR, preferredStyle: .alert)
+                let defaultAction = UIAlertAction(title: CO_OK, style: .cancel, handler: nil)
                 alertController.addAction(defaultAction)
                 self.present(alertController, animated: true, completion: nil)
                 return

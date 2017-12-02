@@ -25,15 +25,15 @@ class SigninVC: UIViewController {
     @IBAction func signInBtnWasPressed(_ sender: Any) {
         
         guard let email = emailTextField.text , emailTextField.text != "" else {
-            let alertController = UIAlertController(title: "Error", message: "Please enter your email", preferredStyle: .alert)
-            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            let alertController = UIAlertController(title: CO_ERROR, message: CO_ADD_EMAIL, preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: CO_OK, style: .cancel, handler: nil)
             alertController.addAction(defaultAction)
             present(alertController, animated: true, completion: nil)
             return
         }
         guard let password = passwordTextField.text , passwordTextField.text != "" else {
-            let alertController = UIAlertController(title: "Error", message: "Please enter your password", preferredStyle: .alert)
-            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            let alertController = UIAlertController(title: CO_ERROR, message: CO_ADD_PASSWORD, preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: CO_OK, style: .cancel, handler: nil)
             alertController.addAction(defaultAction)
             present(alertController, animated: true, completion: nil)
             return
@@ -46,15 +46,15 @@ class SigninVC: UIViewController {
                         print("login was succesfully --SigninVC--")
                         self.dismiss(animated: true, completion: nil)
                     }else{
-                        let alertController = UIAlertController(title: "Error", message: loginError?.localizedDescription, preferredStyle: .alert)
-                        let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                        let alertController = UIAlertController(title: CO_ERROR, message: loginError?.localizedDescription, preferredStyle: .alert)
+                        let defaultAction = UIAlertAction(title: CO_OK, style: .cancel, handler: nil)
                         alertController.addAction(defaultAction)
                         self.present(alertController, animated: true, completion: nil)
                     }
                 }
             }else{
-                let alertController = UIAlertController(title: "Error", message: registrationError?.localizedDescription, preferredStyle: .alert)
-                let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                let alertController = UIAlertController(title: CO_ERROR, message: registrationError?.localizedDescription, preferredStyle: .alert)
+                let defaultAction = UIAlertAction(title: CO_OK, style: .cancel, handler: nil)
                 alertController.addAction(defaultAction)
                 self.present(alertController, animated: true, completion: nil)
             }
@@ -65,15 +65,15 @@ class SigninVC: UIViewController {
     @IBAction func loginBtnWasPressed(_ sender: Any) {
         
         guard let email = emailTextField.text , emailTextField.text != "" else {
-            let alertController = UIAlertController(title: "Error", message: "Please enter your email", preferredStyle: .alert)
-            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            let alertController = UIAlertController(title: CO_ERROR, message: CO_ADD_EMAIL, preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: CO_OK, style: .cancel, handler: nil)
             alertController.addAction(defaultAction)
             present(alertController, animated: true, completion: nil)
             return
         }
         guard let password = passwordTextField.text , passwordTextField.text != "" else {
-            let alertController = UIAlertController(title: "Error", message: "Please enter your password", preferredStyle: .alert)
-            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            let alertController = UIAlertController(title: CO_ERROR, message: CO_ADD_PASSWORD, preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: CO_OK, style: .cancel, handler: nil)
             alertController.addAction(defaultAction)
             present(alertController, animated: true, completion: nil)
             return
@@ -83,8 +83,8 @@ class SigninVC: UIViewController {
                 print("login was succesfully --SigninVC--")
                 self.dismiss(animated: true, completion: nil)
             }else{
-                let alertController = UIAlertController(title: "Error", message: loginError?.localizedDescription, preferredStyle: .alert)
-                let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                let alertController = UIAlertController(title: CO_ERROR, message: loginError?.localizedDescription, preferredStyle: .alert)
+                let defaultAction = UIAlertAction(title: CO_OK, style: .cancel, handler: nil)
                 alertController.addAction(defaultAction)
                 self.present(alertController, animated: true, completion: nil)
             }

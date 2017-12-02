@@ -11,6 +11,9 @@
 		F550CEA01FAC65D100A97B71 /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = F550CE9F1FAC65D100A97B71 /* UIViewExt.swift */; };
 		F550CEA21FAC66C500A97B71 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = F550CEA11FAC66C500A97B71 /* Message.swift */; };
 		F5585D261FADBEA100CB8849 /* GroupChatFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5585D251FADBEA100CB8849 /* GroupChatFeedCell.swift */; };
+		F57D2E281FD292F900C86131 /* GoogleServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57D2E271FD292F900C86131 /* GoogleServices.swift */; };
+		F57D2E2A1FD2A32200C86131 /* FacebookServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57D2E291FD2A32200C86131 /* FacebookServices.swift */; };
+		F57D2E2E1FD2AF4500C86131 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F57D2E2D1FD2AF4400C86131 /* Info.plist */; };
 		F5C45C641FAA05C900D6A907 /* SigninVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C45C631FAA05C900D6A907 /* SigninVC.swift */; };
 		F5D25E3C1FA64BA60003F0CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D25E3B1FA64BA60003F0CA /* AppDelegate.swift */; };
 		F5D25E3E1FA64BA60003F0CA /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D25E3D1FA64BA60003F0CA /* FeedVC.swift */; };
@@ -40,6 +43,9 @@
 		F550CE9F1FAC65D100A97B71 /* UIViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
 		F550CEA11FAC66C500A97B71 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		F5585D251FADBEA100CB8849 /* GroupChatFeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupChatFeedCell.swift; sourceTree = "<group>"; };
+		F57D2E271FD292F900C86131 /* GoogleServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleServices.swift; sourceTree = "<group>"; };
+		F57D2E291FD2A32200C86131 /* FacebookServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookServices.swift; sourceTree = "<group>"; };
+		F57D2E2D1FD2AF4400C86131 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F5C45C631FAA05C900D6A907 /* SigninVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninVC.swift; sourceTree = "<group>"; };
 		F5D25E381FA64BA60003F0CA /* ChatAppFirebase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatAppFirebase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5D25E3B1FA64BA60003F0CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -48,7 +54,6 @@
 		F5D25E421FA64BA60003F0CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F5D25E441FA64BA60003F0CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F5D25E471FA64BA60003F0CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		F5D25E491FA64BA60003F0CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F5D978F81FA7BF510066A43B /* GroupFeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupFeedVC.swift; sourceTree = "<group>"; };
 		F5D978FA1FA7BF820066A43B /* AuthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthVC.swift; sourceTree = "<group>"; };
 		F5D978FE1FA7C0BA0066A43B /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
@@ -129,7 +134,7 @@
 				F5D25E441FA64BA60003F0CA /* Assets.xcassets */,
 				F5D25E461FA64BA60003F0CA /* LaunchScreen.storyboard */,
 				F5F222161FA9C53800EC7F73 /* GoogleService-Info.plist */,
-				F5D25E491FA64BA60003F0CA /* Info.plist */,
+				F57D2E2D1FD2AF4400C86131 /* Info.plist */,
 			);
 			path = ChatAppFirebase;
 			sourceTree = "<group>";
@@ -184,6 +189,8 @@
 			children = (
 				F5F2221A1FA9CA5500EC7F73 /* DataServices.swift */,
 				F5F2221C1FA9CA6200EC7F73 /* AuthServices.swift */,
+				F57D2E271FD292F900C86131 /* GoogleServices.swift */,
+				F57D2E291FD2A32200C86131 /* FacebookServices.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -261,6 +268,7 @@
 				F5D25E481FA64BA60003F0CA /* LaunchScreen.storyboard in Resources */,
 				F5F222171FA9C53C00EC7F73 /* GoogleService-Info.plist in Resources */,
 				F5D25E451FA64BA60003F0CA /* Assets.xcassets in Resources */,
+				F57D2E2E1FD2AF4500C86131 /* Info.plist in Resources */,
 				F5D25E431FA64BA60003F0CA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -322,6 +330,7 @@
 			files = (
 				F5F2221D1FA9CA6200EC7F73 /* AuthServices.swift in Sources */,
 				F5D9B9131FA6599800F633CB /* CreatePostVC.swift in Sources */,
+				F57D2E2A1FD2A32200C86131 /* FacebookServices.swift in Sources */,
 				F5F2221B1FA9CA5500EC7F73 /* DataServices.swift in Sources */,
 				F550CEA21FAC66C500A97B71 /* Message.swift in Sources */,
 				F5D979031FA7C3BC0066A43B /* CreateGroupCell.swift in Sources */,
@@ -334,6 +343,7 @@
 				F5D9B9111FA656BB00F633CB /* MeVC.swift in Sources */,
 				F5585D261FADBEA100CB8849 /* GroupChatFeedCell.swift in Sources */,
 				F5C45C641FAA05C900D6A907 /* SigninVC.swift in Sources */,
+				F57D2E281FD292F900C86131 /* GoogleServices.swift in Sources */,
 				F5F222191FA9CA2800EC7F73 /* Constants.swift in Sources */,
 				F5E31A2C1FADA6FE00C5E894 /* Groups.swift in Sources */,
 				F5D9B9151FA65D3B00F633CB /* CreateGroupVC.swift in Sources */,

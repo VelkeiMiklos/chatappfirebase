@@ -8,6 +8,8 @@
 
 import Foundation
 import Firebase
+import GoogleSignIn
+import FBSDKLoginKit
 class AuthService{
     static let instance = AuthService()
     
@@ -43,6 +45,7 @@ class AuthService{
     
     func logoutUser(userLogoutComplete: @escaping (_ isUserLogoutSuccess: Bool, _ error: Error?)->()){
         do{
+            logoutSocial()
             try Auth.auth().signOut()
             userLogoutComplete(true, nil)
         }catch let error as NSError {
@@ -50,4 +53,21 @@ class AuthService{
             userLogoutComplete(false,error)
         }
     }
+    
+    func logoutSocial(){
+        guard let user = Auth.auth().currentUser else { return }
+        for info in (user.providerData) {
+            switch info.providerID{
+            case GoogleAuthProviderID:
+                GIDSignIn.sharedInstance().signOut()
+                print("google")
+            case FacebookAuthProviderID:
+                //                loginManager.logOut()
+                print("facebook")
+            default:
+                break
+            }
+        }
+    }
+    
 }
